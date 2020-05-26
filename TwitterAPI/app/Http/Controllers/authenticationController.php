@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 $connection = new TwitterOAuth($api_key, $api_key_secret, $access_token, $access_token_secret);
 $content = $connection->get("account/verify_credentials");
 
+$statues = $connection->post("statuses/update", ["status" => "Hallo Welt!"]);
 
 
 class authentificationController extends Controller
